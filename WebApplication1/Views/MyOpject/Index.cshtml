@@ -1,0 +1,35 @@
+﻿@model List<WebApplication1.Models.Entities.MyOpject>
+
+@{
+}
+<h1>MyOpjects</h1>
+
+<table class="table">
+    <thead>
+          <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>StartDate</th>
+              <th>EndDate</th>
+              <th>CreateAt</th>
+         
+          </tr>
+    </thead>
+    <tbody>
+        @foreach(var itm in Model)
+        {
+            <tr>
+                <td>@itm.Id</td>
+                <td>@itm.Name</td>
+                <td>@itm.Description</td>
+                <td>@itm.StartDate</td>
+                <td>@itm.EndDate</td>
+                <td>@itm.CreatedDate</td>
+                <td><a class="btn btn-primary" href="MyOpject/Update/@itm.Id">Update</a></td>
+                <td><a class="btn btn-danger" href="MyOpject/Delete/@itm.Id">Delete</a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
